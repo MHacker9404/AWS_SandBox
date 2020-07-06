@@ -3,7 +3,7 @@ import { Key } from '@aws-cdk/aws-kms';
 import { StringParameter } from '@aws-cdk/aws-ssm';
 
 export class KmsStack extends cdk.Stack {
-    private kms_rds: Key;
+    public kms_rds: Key;
 
     constructor(scope: cdk.Construct, id: string, props: cdk.StackProps) {
         super(scope, id, props);

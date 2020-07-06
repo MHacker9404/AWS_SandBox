@@ -8,7 +8,7 @@ interface SecurityStackProps extends cdk.StackProps {
 }
 
 export class SecurityStack extends cdk.Stack {
-    private lambda_sg: ISecurityGroup;
+    public lambda_sg: ISecurityGroup;
     public bastion_sg: ISecurityGroup;
     public lambda_role: IRole;
 
