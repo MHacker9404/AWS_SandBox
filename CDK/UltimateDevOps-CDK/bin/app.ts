@@ -8,6 +8,11 @@ import { BastionStack } from '../lib/bastion-stack';
 import { KmsStack } from '../lib/kms-stack';
 import { S3Stack } from '../lib/S3Stack';
 import { RdsStack } from '../lib/rds-stack';
+import { RedisStack } from '../lib/redis-stack';
+// import { Fn } from '@aws-cdk/core';
+import { CognitoStack } from '../lib/AuthAuth/cognito-stack';
+import { ApiGatewayStack } from '../lib/AuthAuth/api-gateway-stack';
+import { LambdaStack } from '../lib/AuthAuth/lambda-stack';
 
 const app = new cdk.App();
 let vpc_stack = new VpcStack(app, 'vpc');
@@ -21,6 +26,12 @@ let rds_stack = new RdsStack(app, 'rds', {
     bastionSG: sec_stack.bastion_sg,
     kmsKey: kms_stack.kms_rds,
 });
+let redis_stack = new RedisStack(app, 'redis', { vpc: vpc_stack.vpc, redisSG: sec_stack.redis_sg });
+// let redis_stack = new RedisStack(app, 'redis', { vpc: vpc_stack.vpc, redisSG: Fn.importValue('redis-sg-export') });
+
+let cognito_stack = new CognitoStack(app, 'cognito');
+let api_gateway_stack = new ApiGatewayStack(app, 'api-gateway');
+let lambda_stack = new LambdaStack(app, 'lambda');
 
 /*
 let master_stack = new MasterStack(app, 'MasterStack');
