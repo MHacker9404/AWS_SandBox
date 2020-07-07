@@ -22,11 +22,11 @@ export class RdsStack extends cdk.Stack {
         const environment: string = this.node.tryGetContext('environment');
 
         const db_creds = new Secret(this, 'db-secret', {
-            secretName: `${environment}-rds-secret`,
+            secretName: `${environment}/rds-secret`,
             generateSecretString: {
                 includeSpace: false,
                 passwordLength: 12,
-                generateStringKey: 'rds-password',
+                generateStringKey: 'password',
                 excludePunctuation: true,
                 secretStringTemplate: JSON.stringify({ username: 'admin' }),
             },
@@ -38,7 +38,7 @@ export class RdsStack extends cdk.Stack {
             // engineVersion: '5.7.12'
             masterUser: {
                 username: 'admin',
-                password: db_creds.secretValueFromJson('rds-password'),
+                password: db_creds.secretValueFromJson('password'),
             },
             instanceProps: {
                 vpc: props.vpc,

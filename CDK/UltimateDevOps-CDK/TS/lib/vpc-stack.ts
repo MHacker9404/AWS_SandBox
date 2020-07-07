@@ -42,9 +42,9 @@ export class VpcStack extends cdk.Stack {
         this.privateSubnets = this.vpc.privateSubnets.map((subnet: ISubnet) => subnet.subnetId);
         this.privateSubnets.forEach(
             (subnet: string, index: number) =>
-                new ssm.StringParameter(this, `private-subnet-${index}`, {
+                new ssm.StringParameter(this, `private-subnet-${index + 1}`, {
                     stringValue: subnet,
-                    parameterName: `/${environment}/private-subnet-${index}`,
+                    parameterName: `/${environment}/private-subnet-${index + 1}`,
                     type: ssm.ParameterType.STRING,
                 }),
         );
@@ -52,9 +52,9 @@ export class VpcStack extends cdk.Stack {
         this.publicSubnets = this.vpc.publicSubnets.map((subnet: ISubnet) => subnet.subnetId);
         this.publicSubnets.forEach(
             (subnet: string, index: number) =>
-                new ssm.StringParameter(this, `public-subnet-${index}`, {
+                new ssm.StringParameter(this, `public-subnet-${index + 1}`, {
                     stringValue: subnet,
-                    parameterName: `/${environment}/public-subnet-${index}`,
+                    parameterName: `/${environment}/public-subnet-${index + 1}`,
                     type: ssm.ParameterType.STRING,
                 }),
         );

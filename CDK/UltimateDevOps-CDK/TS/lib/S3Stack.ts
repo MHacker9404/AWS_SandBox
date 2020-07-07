@@ -30,7 +30,7 @@ export class S3Stack extends cdk.Stack {
             removalPolicy: RemovalPolicy.RETAIN,
         });
 
-        new StringParameter(this, 'ssm-lambda-bucket', {
+        new StringParameter(this, 'lambda-bucket', {
             parameterName: `/${environment}/lambda-s3-bucket`,
             stringValue: this.bucket.bucketName,
             type: ParameterType.STRING,
