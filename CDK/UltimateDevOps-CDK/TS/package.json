@@ -33,6 +33,8 @@
         "@aws-cdk/aws-kms": "^1.50.0",
         "@aws-cdk/aws-lambda": "^1.50.0",
         "@aws-cdk/aws-rds": "^1.50.0",
+        "@aws-cdk/aws-route53": "^1.50.0",
+        "@aws-cdk/aws-route53-targets": "^1.50.0",
         "@aws-cdk/aws-s3": "^1.50.0",
         "@aws-cdk/aws-secretsmanager": "^1.50.0",
         "@aws-cdk/aws-ssm": "^1.50.0",

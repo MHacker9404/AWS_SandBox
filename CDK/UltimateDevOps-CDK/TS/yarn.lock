@@ -460,7 +460,7 @@
     "@aws-cdk/core" "1.50.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-route53-targets@1.50.0":
+"@aws-cdk/aws-route53-targets@1.50.0", "@aws-cdk/aws-route53-targets@^1.50.0":
   version "1.50.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-route53-targets/-/aws-route53-targets-1.50.0.tgz#b76cf2c4f6d688a4e9769c327669860b236afbeb"
   integrity sha512-q7RgbGjrLPdvovkqOyzPQldy1fWmNZJtRKigf07OtrIATJk4BYKMXJGKe3LYZtGJ/bM41hSqfNvQHhEAZCqH6A==
@@ -478,7 +478,7 @@
     "@aws-cdk/region-info" "1.50.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-route53@1.50.0":
+"@aws-cdk/aws-route53@1.50.0", "@aws-cdk/aws-route53@^1.50.0":
   version "1.50.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-route53/-/aws-route53-1.50.0.tgz#8eac7a1f33381c1419eb19c1e498f5fda6df39e6"
   integrity sha512-KZ9q3WltvNLsyiHmuwTVmAxvhbquE00ggo+4JS7qOL0ipJmSBKnQTN7KJ2Z9bVnkyAGNvSn6vAG4/BsVdexi0w==
