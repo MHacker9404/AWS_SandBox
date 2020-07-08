@@ -13,6 +13,7 @@ import { RedisStack } from '../lib/redis-stack';
 import { CognitoStack } from '../lib/AuthAuth/cognito-stack';
 import { ApiGatewayStack } from '../lib/AuthAuth/api-gateway-stack';
 import { LambdaStack } from '../lib/AuthAuth/lambda-stack';
+import { CpBackendStack } from '../lib/codepipeline/back-end';
 
 const app = new cdk.App();
 let vpc_stack = new VpcStack(app, 'vpc');
@@ -32,6 +33,10 @@ let redis_stack = new RedisStack(app, 'redis', { vpc: vpc_stack.vpc, redisSG: se
 let cognito_stack = new CognitoStack(app, 'cognito');
 let api_gateway_stack = new ApiGatewayStack(app, 'api-gateway');
 let lambda_stack = new LambdaStack(app, 'lambda');
+
+// let pipeline = new CpBackendStack(app, 'pipeline', {
+//     artifactBucket: s3_stack.artifactBucket,
+// });
 
 /*
 let master_stack = new MasterStack(app, 'MasterStack');
