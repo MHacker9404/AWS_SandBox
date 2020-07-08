@@ -14,6 +14,7 @@ import { CognitoStack } from '../lib/AuthAuth/cognito-stack';
 import { ApiGatewayStack } from '../lib/AuthAuth/api-gateway-stack';
 import { LambdaStack } from '../lib/AuthAuth/lambda-stack';
 import { CpBackendStack } from '../lib/codepipeline/back-end';
+import { WafStack } from '../lib/DnsAppSecurity/WAF-stack';
 
 const app = new cdk.App();
 let vpc_stack = new VpcStack(app, 'vpc');
@@ -37,6 +38,8 @@ let lambda_stack = new LambdaStack(app, 'lambda');
 // let pipeline = new CpBackendStack(app, 'pipeline', {
 //     artifactBucket: s3_stack.artifactBucket,
 // });
+
+let waf_stack = new WafStack(app, 'waf');
 
 /*
 let master_stack = new MasterStack(app, 'MasterStack');
