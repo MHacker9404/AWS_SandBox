@@ -16,6 +16,7 @@ import { LambdaStack } from '../lib/AuthAuth/lambda-stack';
 import { CpBackendStack } from '../lib/codepipeline/back-end';
 import { WafStack } from '../lib/DnsAppSecurity/WAF-stack';
 import { Route53Stack } from '../lib/DnsAppSecurity/route-53-stack';
+import { AcmStack } from '../lib/DnsAppSecurity/acm-stack';
 
 const app = new cdk.App();
 let vpc_stack = new VpcStack(app, 'vpc');
@@ -42,6 +43,7 @@ let lambda_stack = new LambdaStack(app, 'lambda');
 
 let waf_stack = new WafStack(app, 'waf');
 let route53_stack = new Route53Stack(app, 'route-53');
+let acm_stack = new AcmStack(app, 'acm');
 
 /*
 let master_stack = new MasterStack(app, 'MasterStack');

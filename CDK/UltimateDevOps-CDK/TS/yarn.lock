@@ -101,7 +101,7 @@
     "@aws-cdk/core" "1.50.0"
     constructs "^3.0.2"
 
-"@aws-cdk/aws-certificatemanager@1.50.0":
+"@aws-cdk/aws-certificatemanager@1.50.0", "@aws-cdk/aws-certificatemanager@^1.50.0":
   version "1.50.0"
   resolved "https://registry.yarnpkg.com/@aws-cdk/aws-certificatemanager/-/aws-certificatemanager-1.50.0.tgz#da55012f65fb555c96abc683ce58f4facfcad431"
   integrity sha512-RufQtYKVd15x0ZYS5CLXmC/nxafHNbvz2K/WuNbx5wE0B3WcDdYgxG6xrFERcZo0fU532oKkW8zvFB7yGantoA==

@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "@aws-cdk/aws-apigateway": "^1.50.0",
+        "@aws-cdk/aws-certificatemanager": "^1.50.0",
         "@aws-cdk/aws-codebuild": "^1.50.0",
         "@aws-cdk/aws-codepipeline": "^1.50.0",
         "@aws-cdk/aws-codepipeline-actions": "^1.50.0",

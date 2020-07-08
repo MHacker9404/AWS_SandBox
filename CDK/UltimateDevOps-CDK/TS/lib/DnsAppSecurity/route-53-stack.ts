@@ -28,10 +28,15 @@ export class Route53Stack extends Stack {
             recordName: `${environment}`,
         });
 
-        // new StringParameter(this, 'webacl-ref-param', {
-        //     parameterName: `/${environment}/webacl-ref`,
-        //     // stringValue: webACL.ref,
-        //     type: ParameterType.STRING,
-        // });
+        new StringParameter(this, 'hosted-zone-id', {
+            parameterName: `/${environment}/hosted-zone-id`,
+            stringValue: hostedZone.hostedZoneId,
+            type: ParameterType.STRING,
+        });
+        new StringParameter(this, 'hosted-zone-arn', {
+            parameterName: `/${environment}/hosted-zone-arn`,
+            stringValue: hostedZone.hostedZoneArn,
+            type: ParameterType.STRING,
+        });
     }
 }
